@@ -54,21 +54,21 @@ def setConstraintMatrixFunc():
                 constraint.append(float(text_var[i][j].get()))
             rhs = float(entries2[i][j + 2].get())
             symbol = entries2[i][j + 1].get()
-            print(constraint)
+            #print(constraint)
             global prob
             if symbol == ">=":
                 cons = lpSum([constraint[g]*descVar[g] for g in range(numDecsVar)]) >= rhs, constName
-                print(cons)
+                #print(cons)
                 prob += cons
                 constraint = []
             if symbol == "<=":
                 cons = lpSum([constraint[g]*descVar[g] for g in range(numDecsVar)]) <= rhs, constName
-                print(cons)
+                #print(cons)
                 prob += cons
                 constraint = []
             if symbol == "=":
                 cons = lpSum([constraint[g]*descVar[g] for g in range(numDecsVar)]) == rhs, constName
-                print(cons)
+                #print(cons)
                 prob += cons
                 constraint = []
         global n
@@ -89,7 +89,7 @@ def setConstraintMatrixFunc():
             optimalvar = ttk.Label(frame1)
             optimalvar.configure(text=x.name + '=' + str(x.varValue),  font=('TkTextFont 15'))
             optimalvar.place(anchor="nw", x = myx, y = n + 80)
-            print(len(str(x.varValue)))
+            #print(len(str(x.varValue)))
             myx += 22*len(str(x.varValue))
             
         timetaken = str(total)
@@ -130,7 +130,7 @@ def addNewConstraint():
     entries2[i].append(symbol)
 
     en = Entry(toplevel2)
-    en.configure(width = 5)
+    en.configure(width = 6)
     en.place(anchor="nw", x = m + 50, y = n + 10)
     entries2[i].append(en)
 
@@ -190,7 +190,7 @@ def genConstraintsFunc():
                 entries2[i].append(symbol)
 
                 en = Entry(toplevel2)
-                en.configure(width = 5)
+                en.configure(width = 6)
                 en.place(anchor="nw", x = m + 50, y = n + 10)
                 entries2[i].append(en)
 
@@ -360,6 +360,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
