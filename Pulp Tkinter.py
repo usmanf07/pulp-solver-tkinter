@@ -327,7 +327,7 @@ def main():
     toplevel2.title("Pulp Solver By Usman (20L-1385)")
 
     frame1.configure(height=1080, padding=10, width=1920)
-    
+
     titleLbl = ttk.Label(frame1)
     titleLbl.configure(
         font="TkTextFont 20",
@@ -353,9 +353,7 @@ def main():
     frame1.place(anchor="nw", relheight=1.0, relwidth=1.0, x=0, y=0)
 
     # Main widget
-    mainwindow = toplevel2
-
-    mainwindow.mainloop()
+    toplevel2.mainloop()
 
 
 if __name__ == '__main__':
